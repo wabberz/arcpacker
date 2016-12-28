@@ -139,7 +139,9 @@ int unpackFile(int fileIndex, istream &arcIn, ostream &manifestOut) {
     binOut << uncompressedData;
     binOut.close();
 
-    manifestOut << (path + sysDirSlash + file + "," + to_string(compressionLevel) + "\n");
+    string manifestPath = path + "\\" + file;
+    replace(manifestPath.begin(), manifestPath.end(), '/', '\\'); // Make sure that the Manifest always uses backslashes
+    manifestOut << (manifestPath + "," + to_string(compressionLevel) + "\n");
 
     return 0;
 }
@@ -269,6 +271,7 @@ int repackARC(string arcFolder) {
     }
 
     while (getline(manifestIn, tLine)) {
+        replace(tLine.begin(), tLine.end(), '\\', '/'); // In case the Manifest used forward-slashes
         trim(tLine);
         if (!tLine.empty()) manifestFiles.push_back(tLine);
     }

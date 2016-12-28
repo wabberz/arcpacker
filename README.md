@@ -1,5 +1,6 @@
 # arcpacker
-**MT-Engine ARC Un/Repacker Ver. 0.9.0 BETA, (c)2016 Uwabami**
+**MT-Engine ARC Un/Repacker Ver. 0.9.1 BETA, (c)2016 Uwabami**
+
 *Original Python code by FrozenFish24, ported to C++ and extended by Uwabami.*
 
 The code is not very neat at the moment and I plan to clean it up and encapsulate it soon. There will also be a DLL with exposed API.
