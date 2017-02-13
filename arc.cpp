@@ -29,7 +29,7 @@ using namespace std;
 #include "arc_packer.h"
 
 void showHelp() {
-	printf ("MT-Engine ARC Un/Repacker Ver. 0.9.1 BETA, (c)2016 Uwabami\nOriginal Python code by FrozenFish24, ported to C++ and extended by Uwabami.\n\n"
+	printf ("MT-Engine ARC Un/Repacker Ver. 0.9.2 BETA, (c)2016 Uwabami\nOriginal Python code by FrozenFish24, ported to C++ and extended by Uwabami.\n\n"
 			"Use:\n\tarc [flags] [file(s)/folder(s)]"
 			"\n\nFlags:"
 			"\n\t-c {0-9}\tforce zlib compression level\n\t\t\t\t 0 - no compression\n\t\t\t\t 9 - maximum compression\n\t\t\t\t-1 - will use manifest/default"
@@ -86,9 +86,9 @@ int main(int argc, char **argv) {
 
 	if (flagQuiet) flagVerbose = -1;
 #if defined(WIN32) || defined(WIN64)
-	if (flagVerbose >= 0) printf("MT-Engine ARC Un/Repacker Ver. 0.9.1 BETA (Windows)\nOriginal Python code by FrozenFish24, ported to C++ by Uwabami.\n\n");
+	if (flagVerbose >= 0) printf("MT-Engine ARC Un/Repacker Ver. 0.9.2 BETA (Windows)\nOriginal Python code by FrozenFish24, ported to C++ by Uwabami.\n\n");
 #else
-	if (flagVerbose >= 0) printf("MT-Engine ARC Un/Repacker Ver. 0.9.1 BETA (*NIX)\nOriginal Python code by FrozenFish24, ported to C++ by Uwabami.\n\n");
+	if (flagVerbose >= 0) printf("MT-Engine ARC Un/Repacker Ver. 0.9.2 BETA (*NIX)\nOriginal Python code by FrozenFish24, ported to C++ by Uwabami.\n\n");
 #endif
 
 	if (startArg > argc) {

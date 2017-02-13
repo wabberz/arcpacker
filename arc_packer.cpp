@@ -314,11 +314,8 @@ int repackARC(string arcFolder) {
         size_t lPos = aFileName.find_last_of(".", rPos - 1);
         uint32_t aFileType =  std::stoul(aFileName.substr(lPos + 1, (rPos - (lPos + 1))), nullptr, 16);
         string tFileName = aFileName.substr(0, lPos);
-        #if (defined(WIN32) || defined(WIN64))
-        #else
         replace(tFileName.begin(), tFileName.end(), '/', '\\');
-        #endif
-    
+        
         // load file
         ifstream binIn((arcFolder + sysDirSlash + aFileName).c_str(), ios::in|ios::binary);
         if (!binIn.good()) {
