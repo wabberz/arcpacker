@@ -2,11 +2,12 @@ arc:
 	mkdir -p build
 	g++ -Wall -Wextra -m32 -s -Os arc.cpp arc_packer.cpp fs_helper.cpp zlib_helper.cpp globals.cpp -o build/arc -lz
 	#g++ -Wall -Wextra -m64 -s -Os arc.cpp arc_packer.cpp fs_helper.cpp zlib_helper.cpp globals.cpp -o build/arc64 -lz
-	i686-w64-mingw32-g++ -Wall -Wextra -m32 -s -Os arc.cpp arc_packer.cpp fs_helper.cpp zlib_helper.cpp globals.cpp -o build/arc.exe -lz -static
-	#i686-w64-mingw32-g++ -Wall -Wextra -m64 -s -Os arc.cpp arc_packer.cpp fs_helper.cpp zlib_helper.cpp globals.cpp -o build/arc64.exe -lz -static
-	upx --best --ultra-brute build/arc
+	w32-g++ -Wall -Wextra -m32 -s -Os arc.cpp arc_packer.cpp fs_helper.cpp zlib_helper.cpp globals.cpp -o build/arc.exe -lz -static
+	#w64-g++ -Wall -Wextra -m64 -s -Os arc.cpp arc_packer.cpp fs_helper.cpp zlib_helper.cpp globals.cpp -o build/arc64.exe -lz -static
+
+	#upx --best --ultra-brute build/arc
 	#upx --best --ultra-brute build/arc64
-	upx --best --ultra-brute build/arc.exe
+	#upx --best --ultra-brute build/arc.exe
 	#upx --best --ultra-brute build/arc64.exe
 
 install: arc
